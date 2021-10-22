@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>个人信息</h1>
+  <table border="1" class="table table-striped">
+    <tr><th>学校名</th><td>{{dormitory.school_name}}</td><tr>
+    <tr><th>宿舍楼号</th><td>{{dormitory.dormitory_number}}</td><tr>
+    <tr><th>房间号</th><td>{{dormitory.room_number}}</td><tr>
+    <tr>
+      {%for link in linkman%}
+      <th>联系人</th>
+      <td>{{link.linkman_name}}</td><tr>
+      <th>联系人邮箱</th>
+      <td>{{link.linkman_email}}</td></tr>
+      {%endfor%}
+    <tr>
+    <tr><th>余额</th><td>{{dormitory.banlance}}</td><tr>
+<p><td><a href="{{dormitory.dormitory_id}}/add" class="btn btn-default pull-left">添加联系人</a></td></p>
+<p><td><a href="{{dormitory.dormitory_id}}/edit" class="btn btn-default pull-left">修改信息</a></td></p>
+</table>
+<p><td><a href="{{dormitory.dormitory_id}}/order" class="btn btn-primary" >订水</a></td></p>
+<p><h3>历史订单</h3></p>
+  <table border="0" class="table table-striped">
+  <tr><th>创建时间</th><th>水的种类</th><th>水的数量</th><th>预定时间</th><th>订单价格</th><tr>
+  {% for ord in order %}
+  <tr><td>{{ord.create_time}}</td><td>{{ord.water_brand}}</td><td>{{ord.water_number}}</td>
+      <td>{{ord.preset_time}}</td><td>{{ord.order_price}}</td>
+  <tr>
+  {% endfor %}
+{% endblock %}

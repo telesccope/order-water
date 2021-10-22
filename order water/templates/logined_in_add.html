@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="content">
+  <h2 class="title-center">添加联系人</h2>
+  <form method="POST" action=""> 
+    <p>联系人姓名:<input name="linkman_name" class="form-control"  type="text"></p>
+    <p>联系方式:   <input name="linkman_email" class="form-control" type="text"></p>
+<p><input type="submit" class="btn btn-primary" value="添加"></p>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="ng-Wdatepicker-master\WdatePicker.js"></script>
+</head>
+{% block body %}
+<form  method="POST" action="">
+           <p><label class="intro">送达日期:</label> 
+          <input type="text" name="order_date" onClick="WdatePicker()" /></p>
+          <p><label class="intro">送达时间:</label>  
+          <select name="order_time">
+	<option value=0>中午12点</option>
+                <option value=1>下午6点</option>
+          </select></p>
+          <p><label class="intro">水的品牌:</label>  
+          <select name="water_brand">
+	<option value=0>娃哈哈</option>
+                <option value=1>国星</option>
+                <option value=2>水状元</option>
+          </select></p>
+          <p><label class="intro">水的数量:</label>  
+          <select name="water_number">
+	<option value=0>1桶</option>
+                <option value=1>2桶</option>
+          </select></p>
+    <p><input type="submit" class="btn btn-primary"  value="提交订单"></p>
+</form>
+{% endblock %}
